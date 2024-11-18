@@ -36,6 +36,9 @@ on:
   push:
     branches:
       - main 
+  workflowrun:
+    branches:
+      - main 
     
       
 jobs:
