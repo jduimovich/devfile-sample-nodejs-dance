@@ -31,9 +31,16 @@ env:
   IMAGE_TAG: ""
   DEFAULT_UPDATE_VIA_PUSH: "true"
   # 🖊️ EDIT to set a name for your OpenShift app, or a default one will be generated below.
-  APP_NAME: ""
-on: [push, workflow_dispatch]
-
+  APP_NAME: "" 
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+    branches:
+      - *
+    
+      
 jobs:
   tssc-ci-cd:
     name: Build and send Image Update PR
